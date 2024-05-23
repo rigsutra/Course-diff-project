@@ -1,0 +1,18 @@
+.filter-data{
+    justify-content: center;
+    text-align: center;
+}
+
+.btn{
+    background-color: rgb(39, 39, 112);
+    color: white;
+    padding: 6px;
+    margin: 5px;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: rgb(33, 33, 100);
+}

@@ -1,0 +1,13 @@
+.nav{
+    padding-top: 4px;
+    background-color: rgb(39, 39, 112);
+}
+
+.header{
+    color: white;
+    justify-content: center;
+    text-align: center;
+    font-weight: 900;
+    font-size: larger;
+    padding: 8px;
+}

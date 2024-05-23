@@ -1,0 +1,16 @@
+/* .app-box{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+} */
+.AllCards{
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    max-width: auto;
+    width: 91.666667%;
+    margin-left: 85px;
+}

@@ -1,0 +1,36 @@
+.card-container{
+    width: 300px;
+    opacity: 80;
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 30px;
+    background-color: rgb(90, 89, 96);
+    border: 1px black solid;
+}
+.image-data{
+    position: relative;
+    
+}
+.btn-class{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 9999px;
+    position: absolute;
+    right: 2px;
+    bottom: 3px;
+    place-items: center;
+}
+.info{
+    padding: 4px;
+}
+.title{
+    color: white;
+    font-weight: 600;
+    font-size: large;
+    line-height: 24px;
+}
+p{
+    color: white;
+    padding-left: 10px;
+}
