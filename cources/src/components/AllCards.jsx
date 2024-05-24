@@ -1,22 +1,41 @@
+/* eslint-disable react/prop-types */
 import Card from "./Card";
-import "./Allcards.css"
+import "./Allcards.css";
+import { useState } from "react";
 
-// eslint-disable-next-line react/prop-types
-const AllCards = ({ courses }) => {
+const AllCards = (props) => {
+  const course = props.courses;
+  let category = props.category;
+  const [likedCourses, setLikedCourses] = useState([]);
+
   const getCourses = () => {
     let allCourses = [];
-    Object.values(courses).forEach((courseCatogary) => {
-      courseCatogary.forEach((course) => {
-        allCourses.push(course);
-      });
-    });
-    return allCourses;
+
+    if (category === "All") {
+      // Check if course is defined and is an object
+      if (course && typeof course === "object") {
+        Object.values(course).forEach((courseCategory) => {
+          courseCategory.forEach((course) => {
+            allCourses.push(course);
+          });
+        });
+      }
+
+      return allCourses;
+    } else {
+      return course[category];
+    }
   };
 
   return (
     <div className="AllCards">
       {getCourses().map((course) => (
-        <Card key={course.id} course={course} />
+        <Card
+          key={course.id}
+          likedCourses={likedCourses}
+          setLikedCourses={setLikedCourses}
+          course={course}
+        />
       ))}
     </div>
   );

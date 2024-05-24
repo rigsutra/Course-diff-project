@@ -1,18 +1,34 @@
-import "./Filter.css"
+import "./Filter.css";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line react/prop-types
-const Filter = ({filterData}) => {
-
-    const filter = filterData;
+const Filter = ({ filterData, setCategory }) => {
+  function categoryHandler(title) {
+    setCategory(title);
+  }
 
   return (
     <div className="filter-data">
-       { filter.map((data) => (
-            <button className="btn" key={data.id}>{data.title}</button>
-        ))}
-      
+      {filterData.map((data) => (
+        <button
+          className="btn"
+          onClick={() => categoryHandler(data.title)}
+          key={data.id}
+        >
+          {data.title}
+        </button>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Filter
+Filter.propTypes = {
+  filterData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  setCategory: PropTypes.func.isRequired,
+};
+
+export default Filter;

@@ -8,8 +8,9 @@ import Spinner from "./components/Spinner";
 import "./App.css"
 
 const App = () => {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [category , setCategory] = useState(filterData[0].title);
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -31,10 +32,13 @@ const App = () => {
         <Header />
       </div>
       <div>
-        <Filter filterData={filterData} />
+        <Filter
+        filterData={filterData}
+        category={category}
+        setCategory={setCategory} />
       </div>
       <div className="AllCards">
-        {loading  ? (<Spinner/>) : ( <AllCards courses={courses} />)  }
+        {loading  ? (<Spinner/>) : ( <AllCards category={category} courses={courses} />)  }
        
       </div>
     </div>
